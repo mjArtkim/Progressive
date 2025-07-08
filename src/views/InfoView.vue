@@ -7,16 +7,14 @@ import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
 
 // GSAP 플러그인 등록 (전역적으로 한 번만 등록하면 됩니다)
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin)
-
 onMounted(() => {
   let smoother // smoother 변수를 밖으로 빼서 접근 가능하게 함
 
+  // 1. 초기 투명도를 0으로 설정
+  gsap.set('.images-pin-wrapper', { opacity: 0 })
+
   ScrollTrigger.create({
-    trigger: 'body', // 페이지 전체를 기준으로
-    start: 'top top-=100vh', // 뷰포트 상단에서 100vh 아래로 스크롤했을 때
-    once: true, // 한 번만 실행
     onEnter: () => {
-      // 100vh 스크롤이 지난 후에 ScrollSmoother를 생성
       smoother = ScrollSmoother.create({
         wrapper: '#smooth-wrapper',
         content: '#smooth-content',
@@ -24,32 +22,24 @@ onMounted(() => {
         effects: true,
       })
 
-      // 여기서 원래 애니메이션들도 함께 초기화
-      gsap.from('.draw', {
-        drawSVG: '0%',
-        ease: 'expo.out',
+      // 3. ScrollSmoother가 생성된 후 이미지를 나타나게 하는 애니메이션 추가
+      gsap.to('.images-pin-wrapper', {
+        opacity: 1, // 투명도를 1로 변경하여 보이게 합니다.
+        duration: 2.5, // 1.5초 동안 서서히 나타납니다.
+        ease: 'power1.out', // 부드러운 전환 효과를 줍니다.
+      })
+
+      // 이미지를 고정시키는 ScrollTrigger (위에 투명도 애니메이션과 별개로 작동)
+      gsap.to('.images-pin-wrapper', {
         scrollTrigger: {
-          trigger: '.heading',
-          start: 'top top', // ScrollSmoother가 이미 활성화된 상태이므로 relative하게 'top top'
-          scrub: true,
-          pin: '.pin',
-          pinSpacing: false,
+          trigger: '.images-pin-wrapper',
+          start: 'center bottom', // 이미지 래퍼가 뷰포트 중앙에 닿을 때 고정 시작
+          pin: true, // .images-pin-wrapper 요소를 고정
+          pinSpacing: true, // 고정 공간 유지 (뒤의 내용이 밀려 내려옴)
+          end: '+=700', // 900px 스크롤되는 동안 고정 유지 (조절 가능)
           // markers: true,
         },
       })
-      gsap.from('.images img', {
-        y: '100vh', // 이미지가 뷰포트 아래에서 시작
-        opacity: 0,
-        stagger: 0.2, // 여러 이미지에 시간차 적용
-        scrollTrigger: {
-          trigger: '.images',
-          start: 'top bottom', // 이미지가 뷰포트에 들어올 때 시작
-          end: 'center center', // 이미지가 뷰포트 중앙에 도달할 때 애니메이션 종료 (즉, 그 위치에 멈춤)
-          scrub: true, // 스크롤에 따라 부드럽게 움직임
-          // markers: true,
-        },
-      })
-      gsap.set('.logo svg', { opacity: 1 })
     },
   })
 })
@@ -57,42 +47,32 @@ onMounted(() => {
 
 <template>
   <div id="smooth-wrapper">
+    <div class="bar-box">
+      <div class="bar-tit">DUBVISION</div>
+      <div class="bar-tit">MATISSE & SADKO</div>
+      <div class="bar-tit">THIRD PARTY</div>
+      <div class="bar-tit">SICK INDIVIDUALS</div>
+    </div>
     <div id="smooth-content">
       <section class="hero pad-l">
-        <div class="heading">
-          <div class="pin">
-            <h1>
-              <span class="clamp"
-                >Clamp
-                <svg
-                  data-name="Layer 1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 842.14 500"
-                >
-                  <path
-                    class="draw"
-                    d="M336.2,130.05C261.69,118,16.52,122,20.65,244.29c4.17,123,484.3,299.8,734.57,108.37,244-186.65-337.91-311-546.54-268.47"
-                    fill="none"
-                    stroke="#8486aa"
-                    stroke-miterlimit="10"
-                    stroke-width="8"
-                  />
-                </svg> </span
-              ><span class="yt">your triggers</span>
-            </h1>
+        <div class="images-pin-wrapper">
+          <div class="images">
+            <div class="bar bar1">
+              <button class="but1" data-speed="clamp(1.1)"></button>
+            </div>
+            <div class="bar bar2">
+              <button class="but2" data-speed="clamp(1.1)"></button>
+              <button class="but3" data-speed="clamp(1.2)"></button>
+            </div>
+            <div class="bar bar2">
+              <button class="but4" data-speed="clamp(1.3)"></button>
+              <button class="but5" data-speed="clamp(1.2)"></button>
+            </div>
+            <div class="bar bar2">
+              <button class="but6" data-speed="clamp(1.2)"></button>
+              <button class="but7" data-speed="clamp(1.3)"></button>
+            </div>
           </div>
-        </div>
-        <div class="images">
-          <img
-            data-speed="clamp(2.4)"
-            src="https://images.unsplash.com/photo-1530569673472-307dc017a82d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODM2NTUwMDA&ixlib=rb-4.0.3&q=80&w=400"
-            alt=""
-          />
-          <img
-            data-speed="clamp(1.8)"
-            src="https://images.unsplash.com/photo-1439853949127-fa647821eba0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODM2NTQ5Njk&ixlib=rb-4.0.3&q=80&w=400"
-            alt=""
-          />
         </div>
       </section>
       <section class="spacer"></section>
@@ -100,79 +80,116 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@700&display=swap');
-
+<style scoped lang="scss">
 #smooth-wrapper {
   position: absolute !important;
-  top: 0 !important;
+  top: 50px !important;
   height: 100vh;
+  overflow: hidden;
 }
 
 .pin-spacer {
   pointer-events: none;
 }
 
-:root {
-  --f-5-min: 30;
-  --f-5-max: 120;
-  --step-5: calc(
-    ((var(--f-5-min) / 16) * 1rem) + (var(--f-5-max) - var(--f-5-min)) * var(--fluid-bp)
-  );
-}
 .hero {
   min-height: 100vh;
 }
-
-.logo {
-  width: 150px;
-  max-width: 40vw;
-  filter: invert(1);
+.bar-box {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr;
 }
-
 .images {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr;
   align-items: stretch;
   justify-items: center;
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 
 .spacer {
   height: 100vh;
 }
 
-.clamp {
-  position: relative;
-  z-index: -1;
+.bar2 {
+  width: 100%;
+  display: flex;
+  padding: 0 10px; /* 직접 값 사용 */
+  gap: 0 20px;
 }
-.yt {
-  z-index: 3;
+.bar-tit1 {
+  width: 100%;
 }
+.bar-tit {
+  width: 100%;
+  padding: 0 10px; /* 직접 값 사용 */
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+}
+.bar {
+  width: 100%;
+  button {
+    border-radius: 5px; /* 직접 값 사용 */
+    width: 90%; /* 직접 값 사용 */
+    height: 700px; /* 직접 값 사용 */
+    color: white; /* 직접 값 사용 */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    :hover {
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(105deg, #ffffff42, #ffffff77, #ffffff16); /* 직접 값 사용 */
+      z-index: -1;
+      margin: -1px; /* 직접 값 사용 */
+      border-radius: 5px; /* 직접 값 사용 */
+    }
 
-.clamp svg {
-  position: absolute;
-  width: 112%;
-  top: 0;
-  top: 50%;
-  transform: translateY(-0%) rotate(2deg);
-  left: -6%;
-}
-
-.heading {
-  position: relative;
-  z-index: 2;
-  mix-blend-mode: difference;
-  perspective: 1000px;
-  -webkit-backface-visibility: visible;
-  backface-visibility: visible;
-  transform: rotate(0.1deg);
-}
-.images {
-  z-index: -1;
-}
-
-.logo svg {
-  opacity: 0;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 5px; /* 직접 값 사용 */
+      z-index: -1;
+      margin: 1px; /* 직접 값 사용 */
+      background-position: center 30%;
+      background-size: cover;
+    }
+    &.but1::after {
+      background-image: url('@/assets/img/dub_1.png');
+    }
+    &.but2::after {
+      background-image: url('@/assets/img/ms_1.png');
+    }
+    &.but3::after {
+      background-image: url('@/assets/img/ms_2.png');
+    }
+    &.but4::after {
+      background-image: url('@/assets/img/tp_1.png');
+    }
+    &.but5::after {
+      background-image: url('@/assets/img/tp_2.png');
+    }
+    &.but6::after {
+      background-image: url('@/assets/img/si_1.png');
+    }
+    &.but7::after {
+      background-image: url('@/assets/img/si_2.png');
+    }
+  }
 }
 </style>

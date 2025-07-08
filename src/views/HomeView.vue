@@ -7,9 +7,11 @@ import InfoView from '@/views/InfoView.vue'
   <div class="about-box">
     <AboutView></AboutView>
   </div>
-  <div class="info-box">
-    <InfoView></InfoView>
-  </div>
+  <section class="wrap">
+    <div class="info-box">
+      <InfoView></InfoView>
+    </div>
+  </section>
 </template>
 
 <style>
@@ -19,5 +21,9 @@ import InfoView from '@/views/InfoView.vue'
 .info-box {
   position: relative;
   min-height: 100vh;
+  margin-top: 50px;
+}
+.wrap {
+  padding: 0 80px;
 }
 </style>
