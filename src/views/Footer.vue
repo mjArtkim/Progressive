@@ -46,7 +46,7 @@ const photoHolders = [
 <style>
 .footer {
   font-family: 'NanumSquareRound';
-  min-height: 30vh;
+  min-height: 20vh;
   color: #eee;
   padding: 0 80px;
 }
