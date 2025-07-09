@@ -87,6 +87,7 @@ const musicList = [
 }
 .music {
   width: 100%;
+  max-width: 450px;
   height: 450px;
   perspective: 1000px;
 }

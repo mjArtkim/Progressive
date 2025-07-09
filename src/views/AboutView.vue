@@ -68,6 +68,7 @@ onBeforeUnmount(() => {
   justify-content: center;
   position: relative;
   overflow: hidden !important;
+  overflow-x: hidden !important;
 }
 .background-image-wrapper {
   position: absolute;
