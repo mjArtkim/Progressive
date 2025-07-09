@@ -32,8 +32,8 @@ onUnmounted(() => {
             <div class="images">
               <div class="bar bar3">
                 <div class="mo-tit">DUBVISION</div>
-                <button class="but1" data-speed="clamp(2.2)"></button>
-                <button class="but1-1" data-speed="clamp(1.3)"></button>
+                <button class="but1" data-speed="clamp(1.2)"></button>
+                <button class="but1-1" data-speed="clamp(2.1)"></button>
               </div>
               <div class="bar bar2">
                 <div class="mo-tit">MATISSE & SADKO</div>
@@ -47,8 +47,8 @@ onUnmounted(() => {
               </div>
               <div class="bar bar2">
                 <div class="mo-tit">SICK INDIVIDUALS</div>
-                <button class="but6" data-speed="clamp(2.1)"></button>
-                <button class="but7" data-speed="clamp(1.3)"></button>
+                <button class="but6" data-speed="clamp(1.3)"></button>
+                <button class="but7" data-speed="clamp(2.1)"></button>
               </div>
             </div>
           </div>

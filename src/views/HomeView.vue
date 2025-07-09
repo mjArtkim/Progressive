@@ -7,6 +7,7 @@ import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin' // 필요하다면
 import AboutView from '@/views/AboutView.vue'
 import InfoView from '@/views/InfoView.vue'
 import MusicViewVue from '@/views/MusicView.vue'
+import FooterVue from '@/views/Footer.vue'
 
 // GSAP 플러그인 등록은 전역적으로 한 번만 하면 됩니다.
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin)
@@ -48,6 +49,9 @@ onUnmounted(() => {
           <h2 class="music-big-tit">TEAM PROGRESSIVE HOUSE MUSIC</h2>
         </div>
         <MusicViewVue></MusicViewVue>
+      </div>
+      <div class="foot-container">
+        <FooterVue></FooterVue>
       </div>
     </div>
   </div>
@@ -91,6 +95,10 @@ onUnmounted(() => {
   width: 20%;
   padding: 0 10px;
 }
+.foot-container {
+  border-top: 1px solid #aaa;
+  padding: 20px 0;
+}
 /* 작은 모바일 (300px 이하) */
 @media (max-width: 320px) {
 }
@@ -105,6 +113,7 @@ onUnmounted(() => {
   .music-container {
     padding: 30px;
     min-height: 80vh;
+    height: 100%;
   }
 }
 
@@ -125,7 +134,11 @@ onUnmounted(() => {
     width: 25%;
     padding: 0 10px;
   }
-
+  .music-container {
+    min-height: 80vh;
+    height: 100%;
+    margin-bottom: 20px;
+  }
   .music-big-tit {
     width: 100%;
     font-size: 2em;
