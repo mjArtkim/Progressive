@@ -3,41 +3,31 @@ import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 
 const scrollPosition = ref(0)
 
-// 배경 이미지의 스케일과 블러를 동적으로 계산하는 Computed 속성
 const backgroundDynamicStyle = computed(() => {
-  // --- 스케일 설정 ---
   const minScale = 1
-  const maxScale = 1.2 // 최대 확대 비율
-  const scaleScrollRange = window.innerHeight * 2 // 이 스크롤 범위 내에서 스케일 변화
+  const maxScale = 1.2
+  const scaleScrollRange = window.innerHeight * 2
 
-  // 스크롤 위치에 따른 스케일 값 계산
-  // 스크롤이 내려갈수록 minScale에서 maxScale로 증가
   const scale = minScale + (scrollPosition.value / scaleScrollRange) * (maxScale - minScale)
 
-  // --- 블러 설정 ---
-  const minBlur = 0 // 최소 블러 (선명한 상태)
-  const maxBlur = 10 // 최대 블러 (픽셀 단위)
-  const blurScrollRange = window.innerHeight * 2 // 이 스크롤 범위 내에서 블러 변화
+  const minBlur = 0
+  const maxBlur = 10
+  const blurScrollRange = window.innerHeight * 2
 
-  // 스크롤 위치에 따른 블러 값 계산
-  // 스크롤이 내려갈수록 minBlur에서 maxBlur로 증가
   const blur = minBlur + (scrollPosition.value / blurScrollRange) * (maxBlur - minBlur)
 
   return {
     transform: `scale(${Math.min(maxScale, Math.max(minScale, scale))})`,
-    filter: `blur(${Math.min(maxBlur, Math.max(minBlur, blur))}px)`, // 블러 값 제한 및 'px' 단위 추가
+    filter: `blur(${Math.min(maxBlur, Math.max(minBlur, blur))}px)`,
     transformOrigin: 'center center',
-    // 스크롤에 따른 동적 변화이므로 transition은 부드러움을 위해 짧게 설정
     transition: 'transform 0.1s ease-out, filter 0.1s ease-out',
   }
 })
 
-// 스크롤 이벤트 핸들러
 const handleScroll = () => {
   scrollPosition.value = window.scrollY
 }
 
-// 컴포넌트 마운트 및 언마운트 시 이벤트 리스너 설정/해제
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
@@ -76,11 +66,11 @@ onBeforeUnmount(() => {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative; /* 자식 absolute 요소를 위한 기준점 */
+  position: relative;
   overflow: hidden !important;
 }
 .background-image-wrapper {
-  position: absolute; /* .about 요소의 자식으로 절대 위치 */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -88,7 +78,7 @@ onBeforeUnmount(() => {
   background-image: url('@/assets/img/bg_1.png');
   background-position: center;
   background-size: cover;
-  z-index: -1; /* 다른 콘텐츠 뒤에 오도록 설정 */
+  z-index: -1;
 }
 .about-box {
   position: relative;
@@ -127,5 +117,69 @@ onBeforeUnmount(() => {
   font-size: 1.1em;
   line-height: 2.3;
   color: #eee;
+}
+
+/* 작은 모바일 (300px 이하) */
+@media (max-width: 320px) {
+}
+
+/* 모바일 (320px 이상) */
+@media (min-width: 321px) {
+  /* 스타일 정의 */
+}
+
+/* 작은 태블릿 (600px 이하) */
+@media (max-width: 600px) {
+  .main-tit {
+    top: 24% !important;
+    font-size: 2.5em !important;
+    left: 20px;
+    padding-right: 20px;
+  }
+  .main-txt {
+    padding: 0 20px;
+  }
+  .sub-txt {
+    margin-bottom: 20px;
+  }
+  .sub-txt p {
+    font-size: 1em;
+  }
+  .list-txt {
+    font-size: 0.9em;
+  }
+}
+
+/* 중간 크기 태블릿 (768px 이하) */
+@media (max-width: 768px) {
+  /* 스타일 정의 */
+}
+@media (min-width: 809px) and (max-width: 1023px) {
+  .background-image-wrapper {
+    background-position: top !important;
+  }
+}
+
+/* 큰 태블릿 (1024px 이하) */
+@media (max-width: 1024px) {
+  .background-image-wrapper {
+    background-image: url('@/assets/img/mbg_1.png');
+    background-position: bottom;
+  }
+  .main-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+  }
+  .main-tit {
+    position: absolute;
+    top: 38%;
+    left: 30px;
+    font-size: 4em;
+  }
+}
+/* 큰 태블릿 (1024px 이하) */
+@media (max-width: 1200px) {
 }
 </style>

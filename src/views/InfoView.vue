@@ -30,18 +30,23 @@ onUnmounted(() => {
         <section class="hero pad-l">
           <div class="images-pin-wrapper">
             <div class="images">
-              <div class="bar bar1">
+              <div class="bar bar3">
+                <div class="mo-tit">DUBVISION</div>
                 <button class="but1" data-speed="clamp(2.2)"></button>
+                <button class="but1-1" data-speed="clamp(1.3)"></button>
               </div>
               <div class="bar bar2">
+                <div class="mo-tit">MATISSE & SADKO</div>
                 <button class="but2" data-speed="clamp(1.3)"></button>
                 <button class="but3" data-speed="clamp(2.1)"></button>
               </div>
               <div class="bar bar2">
+                <div class="mo-tit">THIRD PARTY</div>
                 <button class="but4" data-speed="clamp(1.3)"></button>
                 <button class="but5" data-speed="clamp(2.4)"></button>
               </div>
               <div class="bar bar2">
+                <div class="mo-tit">SICK INDIVIDUALS</div>
                 <button class="but6" data-speed="clamp(2.1)"></button>
                 <button class="but7" data-speed="clamp(1.3)"></button>
               </div>
@@ -144,6 +149,9 @@ onUnmounted(() => {
     &.but1::after {
       background-image: url('@/assets/img/dub_1.png');
     }
+    &.but1-1::after {
+      background-image: url('@/assets/img/dub_3.png');
+    }
     &.but2::after {
       background-image: url('@/assets/img/ms_1.png');
     }
@@ -163,5 +171,69 @@ onUnmounted(() => {
       background-image: url('@/assets/img/si_2.png');
     }
   }
+}
+/* 작은 모바일 (300px 이하) */
+@media (max-width: 320px) {
+}
+
+/* 모바일 (320px 이상) */
+@media (min-width: 321px) {
+  /* 스타일 정의 */
+}
+
+/* 작은 태블릿 (600px 이하) */
+@media (max-width: 600px) {
+  .bar3 {
+    width: 100%;
+    display: flex;
+    padding: 0 10px;
+    gap: 0 20px;
+  }
+  .bar {
+    button {
+      &.but1::after {
+        background-image: url('@/assets/img/dub_2.png');
+      }
+      &.but1-1::after {
+        background-image: url('@/assets/img/dub_3.png');
+      }
+    }
+  }
+}
+
+/* 중간 크기 태블릿 (768px 이하) */
+@media (max-width: 808px) {
+  .images {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+  }
+  .mo-tit {
+    display: block;
+    writing-mode: vertical-rl;
+    color: #eee;
+    font-weight: 600;
+  }
+  .bar-box {
+    display: none;
+  }
+  .but1-1 {
+    display: block;
+  }
+}
+
+/* 큰 태블릿 (1024px 이하) */
+@media (min-width: 809px) {
+  .mo-tit {
+    display: none;
+  }
+  .but1-1 {
+    display: none !important;
+  }
+}
+@media (min-width: 1025px) {
+}
+/* 큰 태블릿 (1024px 이하) */
+@media (max-width: 1200px) {
 }
 </style>

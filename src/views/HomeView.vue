@@ -14,11 +14,10 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin)
 let smoother: ScrollSmoother | null = null
 
 onMounted(() => {
-  // `body`가 아닌 `HomeView`의 전체 콘텐츠를 감싸는 요소를 wrapper로 사용
   smoother = ScrollSmoother.create({
-    wrapper: '#smooth-wrapper-global', // HomeView의 최상위 wrapper ID
-    content: '#smooth-content-global', // HomeView의 모든 콘텐츠를 감싸는 ID
-    smooth: 2, // 초 설정 (예: 2초)
+    wrapper: '#smooth-wrapper-global',
+    content: '#smooth-content-global',
+    smooth: 2,
     effects: true,
   })
 })
@@ -63,6 +62,7 @@ onUnmounted(() => {
   margin-top: 80px;
 }
 .wrap {
+  width: 100%;
   padding: 0 80px;
 }
 .music-container {
@@ -80,9 +80,73 @@ onUnmounted(() => {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 .logo-container {
+  width: 100%;
   height: 40vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+.logo-container img {
+  width: 20%;
+  padding: 0 10px;
+}
+/* 작은 모바일 (300px 이하) */
+@media (max-width: 320px) {
+}
+
+/* 모바일 (320px 이상) */
+@media (min-width: 321px) {
+  /* 스타일 정의 */
+}
+
+/* 작은 태블릿 (600px 이하) */
+@media (max-width: 600px) {
+  .music-container {
+    padding: 30px;
+    min-height: 80vh;
+  }
+}
+
+/* 중간 크기 태블릿 (768px 이하) */
+@media (max-width: 768px) {
+  /* 스타일 정의 */
+}
+
+/* 큰 태블릿 (1024px 이하) */
+@media (max-width: 1024px) {
+  .wrap {
+    padding: 0 20px;
+  }
+  .logo-container {
+    height: 30vh;
+  }
+  .logo-container img {
+    width: 25%;
+    padding: 0 10px;
+  }
+
+  .music-big-tit {
+    width: 100%;
+    font-size: 2em;
+  }
+}
+/* 큰 태블릿 (1024px 이하) */
+@media (min-width: 1025px) and (max-width: 1400px) {
+  .wrap {
+    width: 100%;
+    padding: 0 30px;
+  }
+  .music-container {
+    width: 100%;
+    height: 80vh;
+    margin: auto;
+    padding: 0 30px;
+  }
+  .main-tit {
+    position: absolute;
+    left: 80px;
+    font-size: 4.2em;
+  }
 }
 </style>

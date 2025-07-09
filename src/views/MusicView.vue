@@ -86,7 +86,7 @@ const musicList = [
   gap: 20px;
 }
 .music {
-  width: 450px;
+  width: 100%;
   height: 450px;
   perspective: 1000px;
 }
@@ -131,6 +131,7 @@ const musicList = [
   transition: all 0.5s ease-in-out;
   transform: translate3d(0px, 0px, 50px);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  cursor: default;
 }
 
 .content-box .card-title:hover {
@@ -146,6 +147,7 @@ const musicList = [
   transition: all 0.5s ease-in-out;
   transform: translate3d(0px, 0px, 30px);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  cursor: default;
 }
 
 .content-box .card-content:hover {
@@ -201,6 +203,48 @@ const musicList = [
 }
 
 .date-box img {
-  width: 50%;
+  width: 55%;
+}
+
+/* 작은 모바일 (300px 이하) */
+@media (max-width: 320px) {
+}
+
+/* 모바일 (320px 이상) */
+@media (min-width: 321px) {
+  /* 스타일 정의 */
+}
+
+@media (max-width: 451px) {
+  .music {
+    width: 100%;
+    height: 350px;
+    perspective: 1000px;
+  }
+  .content-box .card-title {
+    font-size: 1.3em;
+  }
+}
+/* 작은 태블릿 (600px 이하) */
+@media (max-width: 600px) {
+  /* 스타일 정의 */
+}
+
+/* 중간 크기 태블릿 (768px 이하) */
+@media (max-width: 768px) {
+  /* 스타일 정의 */
+}
+
+/* 큰 태블릿 (1024px 이하) */
+@media (max-width: 1024px) {
+  .music-warp {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 50px 0;
+  }
+}
+/* 큰 태블릿 (1024px 이하) */
+@media (max-width: 1200px) {
 }
 </style>
