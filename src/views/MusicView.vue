@@ -1,6 +1,13 @@
 <template>
   <div class="music-warp">
-    <div class="music" v-for="(music, index) in musicList" :key="index">
+    <div
+      class="music"
+      v-for="(music, index) in musicList"
+      :key="index"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-delay="200"
+    >
       <div class="card" :style="{ backgroundImage: `url(${getImageUrl(music.bgImage)})` }">
         <div class="content-box">
           <div class="card-title">{{ music.title }}</div>
