@@ -9,6 +9,7 @@ onMounted(() => {})
 onUnmounted(() => {
   ScrollTrigger.getAll().forEach((st) => {})
 })
+const text = ref(' TEAM PROGRESSIVE HOUSE ')
 </script>
 
 <template>
@@ -52,6 +53,11 @@ onUnmounted(() => {
               </div>
             </div>
           </div>
+          <div class="main-secound">
+            <div class="marquee-content">
+              <span v-for="n in 6" :key="n">{{ text }}</span>
+            </div>
+          </div>
         </section>
         <section class="spacer"></section>
       </div>
@@ -83,7 +89,37 @@ onUnmounted(() => {
   justify-items: center;
   margin-top: 5rem;
 }
+.main-secound {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 12vh;
+  margin-top: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  cursor: default;
+}
 
+.marquee-content {
+  font-size: clamp(3rem, 5vw, 6vw);
+  font-weight: 900;
+  text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.9);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #eee;
+  color: #0f0f0f;
+  display: inline-block;
+  animation: scroll-left 25s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 .spacer {
   height: 0vh;
 }
@@ -219,6 +255,9 @@ onUnmounted(() => {
   }
   .but1-1 {
     display: block;
+  }
+  .main-secound {
+    margin-top: -80px;
   }
 }
 
