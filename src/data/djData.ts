@@ -72,9 +72,9 @@ export const djData: Record<string, DjInfo> = {
         linkyout: 'https://youtube.com/@thirdpartychannel?si=nEKPSlMN2AFJ5xK2',
         linkig:
           'https://www.instagram.com/thirdpartylive?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
-        linkspot: 'https://open.spotify.com/artist/7LIH8tS4w4fC2iGzfj5fpw?si=7119f965582f45ea',
-        linkapple:
+        linkspot:
           'https://open.spotify.com/artist/2J80qXI4NHKpq5RT3xUF7V?si=s2tK79cbQxyx7QOm5IRUbQ',
+        linkapple: 'https://music.apple.com/kr/artist/third-party/275078207',
         linkfam: 'https://www.djthirdparty.com',
       },
     ],
