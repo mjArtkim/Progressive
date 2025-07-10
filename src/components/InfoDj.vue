@@ -272,6 +272,23 @@ const onCloseClick = () => {
   .pc-over {
     display: none;
   }
+  .link-group {
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    a {
+      color: #ccc;
+      font-size: 1.5em;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      :hover {
+        color: #fff;
+        text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        transition: 0.2s ease-in-out;
+      }
+    }
+  }
 }
 @media (min-width: 1401px) {
   .dj-logo1 {

@@ -189,8 +189,6 @@ const showDjInfoById = (djId: string) => {
     display: flex;
     align-items: center;
     justify-content: center;
-    :hover {
-    }
     &::before {
       content: '';
       position: absolute;
@@ -314,6 +312,19 @@ const showDjInfoById = (djId: string) => {
 @media (min-width: 1025px) {
 }
 /* 큰 태블릿 (1024px 이하) */
-@media (max-width: 1200px) {
+@media (min-width: 1401px) {
+  .bar {
+    button {
+      &:hover {
+        &::before {
+          background: linear-gradient(105deg, #ffffff77, #ffffffaa, #ffffff44);
+        }
+        &::after {
+          filter: brightness(1.1);
+        }
+        box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
+      }
+    }
+  }
 }
 </style>
