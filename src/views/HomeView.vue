@@ -10,7 +10,15 @@ import MusicViewVue from '@/views/MusicView.vue'
 import FooterVue from '@/views/Footer.vue'
 import InfoDjVue from '@/components/InfoDj.vue'
 import { djData } from '@/data/djData'
-
+import type { SnsLink } from '@/data/djData'
+const currentDjInfo = ref({
+  name: '',
+  description: '',
+  descript2: '',
+  imageUrl: '',
+  logoImg: '',
+  djsnsLink: [] as SnsLink[], // SnsLink[] 타입으로 명확히 지정
+})
 const showInfoDj = ref(false)
 
 const handleShowInfoDj = (djId: string) => {
@@ -22,7 +30,7 @@ const handleShowInfoDj = (djId: string) => {
       descript2: selectedDj.descript2,
       imageUrl: selectedDj.imageUrl || '',
       logoImg: selectedDj.logoImg || '', // <--- logoImg 값 할당
-      snsLink: selectedDj.snsLink || [], // <--- snsLink 값 할당
+      djsnsLink: selectedDj.snsLink || [], // <--- snsLink 값 할당
     }
     showInfoDj.value = true
   } else {
@@ -38,18 +46,11 @@ const closeInfoDj = () => {
     description: '',
     descript2: '',
     imageUrl: '',
-    snsLink: [],
+    djsnsLink: [] as SnsLink[],
     logoImg: '',
   }
 }
-const currentDjInfo = ref({
-  name: '',
-  description: '',
-  descript2: '',
-  imageUrl: '',
-  snsLink: [],
-  logoImg: '',
-})
+
 // GSAP 플러그인 등록은 전역적으로 한 번만 하면 됩니다.
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin)
 
@@ -91,7 +92,7 @@ watch(showInfoDj, (newValue) => {
     :djDescript2="currentDjInfo.descript2"
     :djImageUrl="currentDjInfo.imageUrl"
     :djlogoImg="currentDjInfo.logoImg"
-    :djsnsLink="currentDjInfo.snsLink"
+    :djsnsLink="currentDjInfo.djsnsLink"
     @close="closeInfoDj"
   ></InfoDjVue>
 

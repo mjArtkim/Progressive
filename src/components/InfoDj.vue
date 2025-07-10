@@ -60,6 +60,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+import type { SnsLink } from '@/data/djData'
 const props = defineProps({
   djName: {
     type: String,
@@ -78,15 +80,7 @@ const props = defineProps({
     default: '',
   },
   djsnsLink: {
-    // snsLink (새로운 프롭스 - 배열 타입)
-    type: Array as () => Array<{
-      linkhome: string
-      linkyout: string
-      linkig: string
-      linkspot: string
-      linkapple: string
-      linkfam: string
-    }>,
+    type: Array as () => SnsLink[],
     default: () => [],
   },
   djlogoImg: {
@@ -244,8 +238,6 @@ const onCloseClick = () => {
   .over-img {
     width: 100%;
     height: 130px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     img {
       object-fit: cover;
@@ -295,8 +287,6 @@ const onCloseClick = () => {
     width: 100%;
     height: 100%;
     max-height: 650px !important;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     img {
       height: 100%;

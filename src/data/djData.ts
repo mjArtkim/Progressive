@@ -1,28 +1,23 @@
-// 1. SNS 링크 객체의 타입을 정의합니다.
-interface SnsLink {
-  linkhome?: string // Optional (필수 아님)
+export interface SnsLink {
+  linkhome?: string
   linkyout?: string
   linkig?: string
   linkspot?: string
   linkapple?: string
-  linkfam?: string // linkfam도 추가되었으니 여기에 포함
+  linkfam?: string
 }
 
-// 2. 개별 DJ 정보 객체의 타입을 정의합니다.
-interface DjInfo {
+export interface DjInfo {
   id: string
   name: string
-  description: string // 짧은 설명
-  descript2: string // 긴 설명
+  description: string
+  descript2: string
   imageUrl: string
   logoImg: string
-  snsLink: SnsLink[] // 위에서 정의한 SnsLink 객체의 배열
+  snsLink: SnsLink[]
 }
 
-// 3. djData 객체 자체의 타입을 정의합니다.
-// Record<string, DjInfo>는 "모든 문자열 키(string)에 대해 DjInfo 타입을 값으로 가질 수 있는 객체"를 의미합니다.
 export const djData: Record<string, DjInfo> = {
-  // <--- 여기에 Record<string, DjInfo> 타입 정의 추가
   dubvision: {
     id: 'dubvision',
     name: 'DUBVISION',
@@ -34,10 +29,11 @@ export const djData: Record<string, DjInfo> = {
     snsLink: [
       {
         linkhome: 'https://www.dubvisionmusic.com',
-        linkyout: 'https://www.youtube.com/@DubVisionMusic', // 실제 YouTube 링크로 수정
+        linkyout: 'https://youtube.com/@dubvision?si=mquJhwLn16cT5aOL',
         linkig:
           'https://www.instagram.com/dubvisionmusic?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
-        linkspot: 'https://open.spotify.com/artist/7btNCDaPu2sMoa0skkAzy4?si=023c921316b24d77', // 실제 Spotify 링크로 수정
+        linkspot:
+          'https://open.spotify.com/artist/3XINWZaloea97SIRiyTJxX?si=jlbW8l8oTX2Ovl4oOihkcw',
         linkapple: 'https://music.apple.com/kr/artist/dubvision/453713844',
       },
     ],
@@ -48,15 +44,16 @@ export const djData: Record<string, DjInfo> = {
     description: '“Grandiose sound, overwhelming scale.”',
     descript2:
       'Matisse & Sadko, the renowned Russian sibling duo, Aleksandr and Yury Parkhomenko, have significantly impacted the EDM scene with their majestic and melodic sound. They are especially celebrated for their iconic collaborations with Martin Garrix.Primarily known for progressive house and big room house, their music features epic, cinematic melodies and powerful, energetic drops, all delivered with pristine production quality.Their extensive partnership with Martin Garrix has produced numerous global anthems, including “Dragon,” “Forever,” and “Won’t Let You Go.” They’ve also collaborated with other giants like Steve Angello and Tiësto, while showcasing their unique sound through their independent label, MONoMARK. A consistent presence at major global festivals like Tomorrowland, Matisse & Sadko continue to deliver unforgettable performances, solidifying their unique and enduring legacy in electronic music.\nBy consistently delivering highly emotional and energetic music that prioritizes quality over transient trends, Matisse & Sadko have carved out a unique and enduring legacy in the EDM scene.',
-    imageUrl: '/prog/images/ms_3.png', // 'prog/' 접두사 제거
-    logoImg: '/prog/images/ms_logo.png', // 'prog/' 접두사 제거
+    imageUrl: '/prog/images/ms_3.png',
+    logoImg: '/prog/images/ms_logo.png',
     snsLink: [
       {
         linkhome: 'https://www.matissesadko.com',
-        linkyout: 'https://www.youtube.com/@MatisseSadkoMusic', // 실제 YouTube 링크로 수정
+        linkyout: 'https://youtube.com/@matissesadkoofficial?si=VmI_vYvNsbNXg73A',
         linkig:
           'https://www.instagram.com/matissesadko?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
-        linkspot: 'https://open.spotify.com/artist/5Sc9clIDjKOCyQyhvzSITx?si=ed7708ce1d5a415a', // 실제 Spotify 링크로 수정
+        linkspot:
+          'https://open.spotify.com/artist/2QMCcKIPHnjQaPPgoEst88?si=jfKuctVTTPSU8VUv1gkOsw',
         linkapple: 'https://music.apple.com/kr/artist/matisse-sadko/445823323',
       },
     ],
@@ -72,11 +69,12 @@ export const djData: Record<string, DjInfo> = {
     snsLink: [
       {
         linkhome: 'https://www.thirdpartypresents.com',
-        linkyout: 'https://www.youtube.com/@thirdpartylive', // 실제 YouTube 링크로 수정
+        linkyout: 'https://youtube.com/@thirdpartychannel?si=nEKPSlMN2AFJ5xK2',
         linkig:
           'https://www.instagram.com/thirdpartylive?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
-        linkspot: 'https://open.spotify.com/artist/7LIH8tS4w4fC2iGzfj5fpw?si=7119f965582f45ea', // 실제 Spotify 링크로 수정
-        linkapple: 'https://music.apple.com/kr/artist/third-party/275078207',
+        linkspot: 'https://open.spotify.com/artist/7LIH8tS4w4fC2iGzfj5fpw?si=7119f965582f45ea',
+        linkapple:
+          'https://open.spotify.com/artist/2J80qXI4NHKpq5RT3xUF7V?si=s2tK79cbQxyx7QOm5IRUbQ',
         linkfam: 'https://www.djthirdparty.com',
       },
     ],
@@ -92,10 +90,11 @@ export const djData: Record<string, DjInfo> = {
     snsLink: [
       {
         linkhome: 'https://www.sickindividuals.com',
-        linkyout: 'https://www.youtube.com/@sickindividuals', // 실제 YouTube 링크로 수정
+        linkyout: 'https://youtube.com/@sickindividuals?si=b7BCyRJbthLyTsgj',
         linkig:
           'https://www.instagram.com/sickindividuals?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
-        linkspot: 'https://open.spotify.com/artist/0XQWfvMLDBRjqdy9Gmr6dt?si=e221d604928e461b', // 실제 Spotify 링크로 수정
+        linkspot:
+          'https://open.spotify.com/artist/0XqFDQJjqW5PfhfBCb53LR?si=OUmPNaarSVqBCl0mttjFEQ',
         linkapple: 'https://music.apple.com/kr/artist/sick-individuals/270362240',
       },
     ],
