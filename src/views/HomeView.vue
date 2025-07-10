@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue' // onMounted, onUnmounted, ref 추가
+import { onMounted, onUnmounted, ref, watch } from 'vue' // onMounted, onUnmounted, ref 추가
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
@@ -8,7 +8,48 @@ import AboutView from '@/views/AboutView.vue'
 import InfoView from '@/views/InfoView.vue'
 import MusicViewVue from '@/views/MusicView.vue'
 import FooterVue from '@/views/Footer.vue'
+import InfoDjVue from '@/components/InfoDj.vue'
+import { djData } from '@/data/djData'
 
+const showInfoDj = ref(false)
+
+const handleShowInfoDj = (djId: string) => {
+  const selectedDj = djData[djId]
+  if (selectedDj) {
+    currentDjInfo.value = {
+      name: selectedDj.name,
+      description: selectedDj.description,
+      descript2: selectedDj.descript2,
+      imageUrl: selectedDj.imageUrl || '',
+      logoImg: selectedDj.logoImg || '', // <--- logoImg 값 할당
+      snsLink: selectedDj.snsLink || [], // <--- snsLink 값 할당
+    }
+    showInfoDj.value = true
+  } else {
+    console.warn(`DJ 정보를 찾을 수 없습니다: ${djId}`)
+  }
+}
+
+const closeInfoDj = () => {
+  showInfoDj.value = false
+  // 닫을 때 정보 초기화 (선택 사항)
+  currentDjInfo.value = {
+    name: '',
+    description: '',
+    descript2: '',
+    imageUrl: '',
+    snsLink: [],
+    logoImg: '',
+  }
+}
+const currentDjInfo = ref({
+  name: '',
+  description: '',
+  descript2: '',
+  imageUrl: '',
+  snsLink: [],
+  logoImg: '',
+})
 // GSAP 플러그인 등록은 전역적으로 한 번만 하면 됩니다.
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin)
 
@@ -31,9 +72,29 @@ onUnmounted(() => {
   }
   ScrollTrigger.getAll().forEach((st) => st.kill())
 })
+
+watch(showInfoDj, (newValue) => {
+  const scrollContainer = document.getElementById('smooth-wrapper-global') || document.body
+  if (newValue) {
+    scrollContainer.style.overflow = 'hidden'
+  } else {
+    scrollContainer.style.overflow = ''
+  }
+})
 </script>
 
 <template>
+  <InfoDjVue
+    v-if="showInfoDj"
+    :djName="currentDjInfo.name"
+    :djDescription="currentDjInfo.description"
+    :djDescript2="currentDjInfo.descript2"
+    :djImageUrl="currentDjInfo.imageUrl"
+    :djlogoImg="currentDjInfo.logoImg"
+    :djsnsLink="currentDjInfo.snsLink"
+    @close="closeInfoDj"
+  ></InfoDjVue>
+
   <div id="smooth-wrapper-global">
     <div id="smooth-content-global">
       <div class="about-box">
@@ -41,7 +102,7 @@ onUnmounted(() => {
       </div>
       <section class="wrap">
         <div class="info-box">
-          <InfoView></InfoView>
+          <InfoView @show-dj-info="handleShowInfoDj"></InfoView>
         </div>
       </section>
       <div class="music-container">

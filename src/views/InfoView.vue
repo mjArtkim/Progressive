@@ -1,15 +1,18 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref, defineEmits } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
-
+const emit = defineEmits(['show-dj-info'])
 onMounted(() => {})
 
 onUnmounted(() => {
   ScrollTrigger.getAll().forEach((st) => {})
 })
 const text = ref(' TEAM PROGRESSIVE HOUSE ')
+const showDjInfoById = (djId: string) => {
+  emit('show-dj-info', djId)
+}
 </script>
 
 <template>
@@ -33,23 +36,55 @@ const text = ref(' TEAM PROGRESSIVE HOUSE ')
             <div class="images">
               <div class="bar bar3">
                 <div class="mo-tit">DUBVISION</div>
-                <button class="but1" data-speed="clamp(1.2)"></button>
-                <button class="but1-1" data-speed="clamp(2.1)"></button>
+                <button
+                  class="but1"
+                  data-speed="clamp(1.2)"
+                  @click="showDjInfoById('dubvision')"
+                ></button>
+                <button
+                  class="but1-1"
+                  data-speed="clamp(2.1)"
+                  @click="showDjInfoById('dubvision')"
+                ></button>
               </div>
               <div class="bar bar2">
                 <div class="mo-tit">MATISSE & SADKO</div>
-                <button class="but2" data-speed="clamp(1.3)"></button>
-                <button class="but3" data-speed="clamp(2.1)"></button>
+                <button
+                  class="but2"
+                  data-speed="clamp(1.3)"
+                  @click="showDjInfoById('matisseSadko')"
+                ></button>
+                <button
+                  class="but3"
+                  data-speed="clamp(2.1)"
+                  @click="showDjInfoById('matisseSadko')"
+                ></button>
               </div>
               <div class="bar bar2">
                 <div class="mo-tit">THIRD PARTY</div>
-                <button class="but4" data-speed="clamp(1.3)"></button>
-                <button class="but5" data-speed="clamp(2.4)"></button>
+                <button
+                  class="but4"
+                  data-speed="clamp(1.3)"
+                  @click="showDjInfoById('thirdParty')"
+                ></button>
+                <button
+                  class="but5"
+                  data-speed="clamp(2.4)"
+                  @click="showDjInfoById('thirdParty')"
+                ></button>
               </div>
               <div class="bar bar2">
                 <div class="mo-tit">SICK INDIVIDUALS</div>
-                <button class="but6" data-speed="clamp(1.3)"></button>
-                <button class="but7" data-speed="clamp(2.1)"></button>
+                <button
+                  class="but6"
+                  data-speed="clamp(1.3)"
+                  @click="showDjInfoById('sickIndividuals')"
+                ></button>
+                <button
+                  class="but7"
+                  data-speed="clamp(2.1)"
+                  @click="showDjInfoById('sickIndividuals')"
+                ></button>
               </div>
             </div>
           </div>
@@ -239,6 +274,12 @@ const text = ref(' TEAM PROGRESSIVE HOUSE ')
 
 /* 중간 크기 태블릿 (768px 이하) */
 @media (max-width: 808px) {
+  .bar3 {
+    width: 100%;
+    display: flex;
+    padding: 0 10px;
+    gap: 0 20px;
+  }
   .images {
     display: flex;
     flex-direction: column;

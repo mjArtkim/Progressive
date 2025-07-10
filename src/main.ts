@@ -10,9 +10,9 @@ import 'aos/dist/aos.css'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faUser, faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { faSpotify, faApple, faYoutube } from '@fortawesome/free-brands-svg-icons'
-library.add(faUser, faCoffee, faSpotify, faApple, faYoutube)
+import { faUser, faHouse, faXmark, faLink } from '@fortawesome/free-solid-svg-icons'
+import { faSpotify, faApple, faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons'
+library.add(faUser, faSpotify, faApple, faYoutube, faHouse, faXmark, faInstagram, faLink)
 
 const app = createApp(App)
 
