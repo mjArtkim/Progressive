@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, watch } from 'vue' // onMounted, onUnmounted, ref 추가
+import { onMounted, onUnmounted, ref } from 'vue' // onMounted, onUnmounted, ref 추가
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
@@ -72,15 +72,6 @@ onUnmounted(() => {
     console.log('Global ScrollSmoother killed')
   }
   ScrollTrigger.getAll().forEach((st) => st.kill())
-})
-
-watch(showInfoDj, (newValue) => {
-  const scrollContainer = document.getElementById('smooth-wrapper-global') || document.body
-  if (newValue) {
-    scrollContainer.style.overflow = 'hidden'
-  } else {
-    scrollContainer.style.overflow = ''
-  }
 })
 </script>
 
