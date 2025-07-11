@@ -71,7 +71,7 @@ const musicList = [
         name: 'spotify',
         url: 'https://open.spotify.com/album/1407RKhcxe58TPTwOtp9vF?si=PQZyJFnKROKzcn_4_nE_Gw',
       },
-      { name: 'youtube', url: 'https://youtu.be/bt40wF2qxXk?si=xgnPWN8q09T7UB-2' },
+      { name: 'youtube', url: 'https://youtu.be/3VJnpmvYt2w?si=dZ14NkoZLQ1r8cR_' },
     ],
     logos: ['ms_logo.png', 'tp_logo.png', 'sick_logo.png'],
     bgImage: 'music_2.png',
