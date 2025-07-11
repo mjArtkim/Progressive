@@ -69,9 +69,9 @@ const musicList = [
       },
       {
         name: 'spotify',
-        url: 'https://open.spotify.com/album/7GXKO4RUsmcTc0cOncmOgj?si=DMMQBPDBSa-kqLOytXKm2A',
+        url: 'https://open.spotify.com/album/1407RKhcxe58TPTwOtp9vF?si=PQZyJFnKROKzcn_4_nE_Gw',
       },
-      { name: 'youtube', url: '' },
+      { name: 'youtube', url: 'https://youtu.be/bt40wF2qxXk?si=xgnPWN8q09T7UB-2' },
     ],
     logos: ['ms_logo.png', 'tp_logo.png', 'sick_logo.png'],
     bgImage: 'music_2.png',
