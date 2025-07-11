@@ -63,8 +63,14 @@ const musicList = [
     date: '2025.07.11',
     label: '1001 RECORDINGS',
     links: [
-      { name: 'apple', url: '' },
-      { name: 'spotify', url: '' },
+      {
+        name: 'apple',
+        url: 'https://music.apple.com/kr/album/take-me-there/1821774483?i=1821774485',
+      },
+      {
+        name: 'spotify',
+        url: 'https://open.spotify.com/album/7GXKO4RUsmcTc0cOncmOgj?si=DMMQBPDBSa-kqLOytXKm2A',
+      },
       { name: 'youtube', url: '' },
     ],
     logos: ['ms_logo.png', 'tp_logo.png', 'sick_logo.png'],
