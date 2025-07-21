@@ -59,7 +59,7 @@ const musicList = [
   },
   {
     title: 'Take Me There',
-    artists: 'MATISSE SADKO & THIRD PARTY & SICK INDIVIDUALS',
+    artists: 'SICK INDIVIDUALS & MATISSE SADKO & THIRD PARTY',
     date: '2025.07.11',
     label: '1001 RECORDINGS',
     links: [
