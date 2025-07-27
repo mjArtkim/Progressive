@@ -55,7 +55,7 @@ const musicList = [
       { name: 'youtube', url: 'https://youtu.be/OR6hC3261Sw?si=bOqVAnLW7uVJI07c' },
     ],
     logos: ['dub_logo.png', 'sick_logo.png'],
-    bgImage: 'music_1.png',
+    bgImage: 'music_1.webp',
   },
   {
     title: 'Take Me There',
@@ -74,7 +74,7 @@ const musicList = [
       { name: 'youtube', url: 'https://youtu.be/3VJnpmvYt2w?si=dZ14NkoZLQ1r8cR_' },
     ],
     logos: ['ms_logo.png', 'tp_logo.png', 'sick_logo.png'],
-    bgImage: 'music_2.png',
+    bgImage: 'music_2.webp',
   },
   {
     title: 'Keep Holding on to me',
@@ -87,7 +87,7 @@ const musicList = [
       { name: 'youtube', url: '' },
     ],
     logos: ['dub_logo.png', 'tp_logo.png'],
-    bgImage: 'music_3.png',
+    bgImage: 'music_3.webp',
   },
 ]
 </script>

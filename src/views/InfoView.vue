@@ -216,28 +216,28 @@ const showDjInfoById = (djId: string) => {
       background-size: cover;
     }
     &.but1::after {
-      background-image: url('@/assets/img/dub_1.png');
+      background-image: url('@/assets/img/dub_1.webp');
     }
     &.but1-1::after {
-      background-image: url('@/assets/img/dub_3.png');
+      background-image: url('@/assets/img/dub_3.webp');
     }
     &.but2::after {
-      background-image: url('@/assets/img/ms_1.png');
+      background-image: url('@/assets/img/ms_1.webp');
     }
     &.but3::after {
-      background-image: url('@/assets/img/ms_2.png');
+      background-image: url('@/assets/img/ms_2.webp');
     }
     &.but4::after {
-      background-image: url('@/assets/img/tp_1.png');
+      background-image: url('@/assets/img/tp_1.webp');
     }
     &.but5::after {
-      background-image: url('@/assets/img/tp_2.png');
+      background-image: url('@/assets/img/tp_2.webp');
     }
     &.but6::after {
-      background-image: url('@/assets/img/si_1.png');
+      background-image: url('@/assets/img/si_1.webp');
     }
     &.but7::after {
-      background-image: url('@/assets/img/si_2.png');
+      background-image: url('@/assets/img/si_2.webp');
     }
   }
 }
@@ -261,10 +261,10 @@ const showDjInfoById = (djId: string) => {
   .bar {
     button {
       &.but1::after {
-        background-image: url('@/assets/img/dub_2.png');
+        background-image: url('@/assets/img/dub_2.webp');
       }
       &.but1-1::after {
-        background-image: url('@/assets/img/dub_3.png');
+        background-image: url('@/assets/img/dub_3.webp');
       }
     }
   }

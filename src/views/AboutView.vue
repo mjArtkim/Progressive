@@ -76,7 +76,7 @@ onBeforeUnmount(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('@/assets/img/bg_1.png');
+  background-image: url('@/assets/img/bg_1.webp');
   background-position: center;
   background-size: cover;
   z-index: -1;
@@ -164,7 +164,7 @@ onBeforeUnmount(() => {
 /* 큰 태블릿 (1024px 이하) */
 @media (max-width: 1024px) {
   .background-image-wrapper {
-    background-image: url('@/assets/img/mbg_1.png');
+    background-image: url('@/assets/img/mbg_1.webp');
     background-position: bottom;
   }
   .main-txt {
