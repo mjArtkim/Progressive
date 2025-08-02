@@ -10,15 +10,31 @@ import 'aos/dist/aos.css'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faUser, faHouse, faXmark, faLink } from '@fortawesome/free-solid-svg-icons'
+import {
+  faUser,
+  faHouse,
+  faXmark,
+  faLink,
+  faSquareCaretDown,
+} from '@fortawesome/free-solid-svg-icons'
 import { faSpotify, faApple, faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons'
-library.add(faUser, faSpotify, faApple, faYoutube, faHouse, faXmark, faInstagram, faLink)
+library.add(
+  faUser,
+  faSpotify,
+  faApple,
+  faYoutube,
+  faHouse,
+  faXmark,
+  faInstagram,
+  faLink,
+  faSquareCaretDown,
+)
 
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+app.component('font-awesome-icon', FontAwesomeIcon)
 
 app.mount('#app')
 AOS.init({})
-app.component('font-awesome-icon', FontAwesomeIcon)

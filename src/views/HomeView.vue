@@ -9,6 +9,7 @@ import InfoView from '@/views/InfoView.vue'
 import MusicViewVue from '@/views/MusicView.vue'
 import FooterVue from '@/views/Footer.vue'
 import InfoDjVue from '@/components/InfoDj.vue'
+import TeamVideoVue from '@/views/TeamVideo.vue'
 import { djData } from '@/data/djData'
 import type { SnsLink } from '@/data/djData'
 const currentDjInfo = ref({
@@ -103,6 +104,12 @@ onUnmounted(() => {
         </div>
         <MusicViewVue></MusicViewVue>
       </div>
+      <div class="video-container">
+        <h2 class="music-big-tit">TEAM VIDEO</h2>
+        <div class="video-list">
+          <TeamVideoVue></TeamVideoVue>
+        </div>
+      </div>
       <div class="foot-container">
         <FooterVue></FooterVue>
       </div>
@@ -112,7 +119,7 @@ onUnmounted(() => {
 
 <style>
 #smooth-wrapper-global {
-  overflow-x: hidden !important;
+  /* overflow-x: hidden !important; */
 }
 .about-box {
   height: 100vh;
@@ -130,6 +137,18 @@ onUnmounted(() => {
   height: 80vh;
   margin: auto;
   padding: 0 80px;
+}
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  margin: 0 auto 80px;
+  padding: 0 80px;
+  min-height: 870px;
+}
+.video-list {
+  overflow: auto;
+  display: grid;
 }
 .music-big-tit {
   font-size: 3.5em;
@@ -155,30 +174,20 @@ onUnmounted(() => {
   border-top: 1px solid #aaa;
   padding: 20px 0;
 }
-/* 작은 모바일 (300px 이하) */
-@media (max-width: 320px) {
-}
-
-/* 모바일 (320px 이상) */
-@media (min-width: 321px) {
-  /* 스타일 정의 */
-}
-
-/* 작은 태블릿 (600px 이하) */
 @media (max-width: 600px) {
   .music-container {
     padding: 30px;
     min-height: 80vh;
     height: 100%;
   }
+  .video-container {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto 80px;
+    padding: 30px;
+  }
 }
 
-/* 중간 크기 태블릿 (768px 이하) */
-@media (max-width: 768px) {
-  /* 스타일 정의 */
-}
-
-/* 큰 태블릿 (1024px 이하) */
 @media (max-width: 1024px) {
   .wrap {
     padding: 0 20px;
