@@ -119,7 +119,7 @@ onUnmounted(() => {
 
 <style>
 #smooth-wrapper-global {
-  /* overflow-x: hidden !important; */
+  overflow-x: hidden !important;
 }
 .about-box {
   height: 100vh;
