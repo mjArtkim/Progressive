@@ -15,8 +15,9 @@ import {
   faHouse,
   faXmark,
   faLink,
-  faSquareCaretDown,
+  faArrowDownShortWide,
 } from '@fortawesome/free-solid-svg-icons'
+
 import { faSpotify, faApple, faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons'
 library.add(
   faUser,
@@ -27,7 +28,7 @@ library.add(
   faXmark,
   faInstagram,
   faLink,
-  faSquareCaretDown,
+  faArrowDownShortWide,
 )
 
 const app = createApp(App)

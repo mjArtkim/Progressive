@@ -3,7 +3,7 @@
     <div class="ytc-inbtn">
       <button @click="handleClick" class="ytc-move">
         <div class="ytc-btn">
-          <font-awesome-icon :icon="['fas', 'square-caret-down']" />
+          <font-awesome-icon icon="fa-solid fa-arrow-down-short-wide" />
         </div>
       </button>
     </div>
