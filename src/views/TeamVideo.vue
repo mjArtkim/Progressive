@@ -115,7 +115,7 @@ iframe {
 
 .ytc-btn {
   width: 20px;
-  height: 20px;
+  height: 22px;
   transition-duration: 0.3s;
   color: #fff;
   font-size: 20px;
