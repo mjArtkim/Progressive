@@ -1,39 +1,38 @@
-# progressive
+# 🎵 Progressive House Project
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a **Vue 3 + TypeScript + Vite** based web application.  
+It was created as a personal project dedicated to **Progressive House**.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🚀 Tech Stack
+- ⚡ **Vue 3 (Composition API + `<script setup>`)**
+- 🔷 **TypeScript**
+- ⚙️ **Vite**
+- 🎨 SCSS / Tailwind (if needed)
 
-## Type Support for `.vue` Imports in TS
+---
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## 🛠️ Project Setup
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+### Install dependencies
+```bash
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+Compile and Hot-Reload for Development
 npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
+Type-Check, Compile and Minify for Production
 npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
+Lint with ESLint
 npm run lint
-```
+
+🎯 Purpose
+A personal project made for Progressive House
+To practice and improve Vue 3 + TypeScript development
+To build a clean and efficient development workflow
+
+
+📌 References
+Vite Documentation
+Vue 3 Documentation
+Team Progressive House Member Instargram
