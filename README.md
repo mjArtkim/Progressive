@@ -21,8 +21,6 @@ It was created as a **personal project** dedicated to **Progressive House** 🎶
 
 ## 📸 Preview
 
-> (Add a screenshot or GIF of your project here)
-
 ![screenshot](./src/assets/img/scs.png)
 
 ---
