@@ -10,6 +10,12 @@ It was created as a **personal project** dedicated to **Progressive House** 🎶
 
 ---
 
+## 🌍 Link
+
+🔗 https://www.djthirdparty.com/prog/
+
+---
+
 ## 🚀 Tech Stack
 
 - ⚡ **Vue 3 (Composition API + `<script setup>`)**
