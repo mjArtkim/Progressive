@@ -21,7 +21,8 @@ It was created as a **personal project** dedicated to **Progressive House** 🎶
 - ⚡ **Vue 3 (Composition API + `<script setup>`)**
 - 🔷 **TypeScript**
 - ⚙️ **Vite**
-- 🎨 **SCSS / TailwindCSS** (if needed)
+- 🎨 **SCSS**
+- 🌐 **Responsive & Mobile-friendly design**
 
 ---
 
