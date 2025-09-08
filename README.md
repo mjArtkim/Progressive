@@ -11,6 +11,16 @@ It was created as a personal project dedicated to **Progressive House**.
 - ⚙️ **Vite**
 - 🎨 SCSS / Tailwind (if needed)
 
+## 🎯 Purpose
+A personal project made for Progressive House
+To practice and improve Vue 3 + TypeScript development
+To build a clean and efficient development workflow
+
+
+## 📌 References
+Vite Documentation
+Vue 3 Documentation
+Team Progressive House Member Instargram**
 ---
 
 ## 🛠️ Project Setup
@@ -20,19 +30,15 @@ It was created as a personal project dedicated to **Progressive House**.
 npm install
 
 Compile and Hot-Reload for Development
+
 npm run dev
+
 Type-Check, Compile and Minify for Production
+
 npm run build
+
 Lint with ESLint
+
 npm run lint
 
-🎯 Purpose
-A personal project made for Progressive House
-To practice and improve Vue 3 + TypeScript development
-To build a clean and efficient development workflow
 
-
-📌 References
-Vite Documentation
-Vue 3 Documentation
-Team Progressive House Member Instargram
