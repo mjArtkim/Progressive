@@ -23,7 +23,7 @@ It was created as a **personal project** dedicated to **Progressive House** 🎶
 
 > (Add a screenshot or GIF of your project here)
 
-![screenshot](./src/assets/img/bg_1.webp)
+![screenshot](./src/assets/img/scs.png)
 
 ---
 
