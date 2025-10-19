@@ -1,0 +1,3 @@
+{
+  "rewrites": [{ "source": "/prog/(.*)", "destination": "/prog/index.html" }]
+}
