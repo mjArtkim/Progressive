@@ -12,7 +12,7 @@ It was created as a **personal project** dedicated to **Progressive House** 🎶
 
 ## 🌍 Link
 
-🔗 https://www.djthirdparty.com/prog/
+🔗 https://prog.djthirdparty.com
 
 ---
 
