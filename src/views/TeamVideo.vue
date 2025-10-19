@@ -28,6 +28,7 @@ import Flip from 'gsap/Flip'
 
 gsap.registerPlugin(Flip)
 const videoIds = [
+  'lPLHOPVSw_Q?si=V43CKVqe1MmJiyD3',
   'aWOm_wGei7Q?si=KMDgDZdl-n2zxtpx',
   '2F-cUyKOqv0?si=-mqvXfOn4hKfJWEA',
   'Tf9dIMr7rOs?si=vG-C8aT275lB2ymq',
@@ -69,9 +70,9 @@ const handleClick = () => {
 }
 
 .ytc {
-  padding-bottom: 56.25%;
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   border-radius: 10px;
   display: flex;
   flex-direction: column;

@@ -142,13 +142,13 @@ onUnmounted(() => {
 .video-container {
   position: relative;
   width: 100%;
-  height: 80vh;
+  min-height: 100vh;
+  height: 100%;
   margin: 0 auto 80px;
   padding: 0 80px;
   min-height: 870px;
 }
 .video-list {
-  overflow: auto;
   display: grid;
 }
 .music-big-tit {
@@ -183,7 +183,7 @@ onUnmounted(() => {
   }
   .video-container {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0 auto 80px;
     padding: 30px;
   }
