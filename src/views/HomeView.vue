@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue' // onMounted, onUnmounted, ref 추가
+import { onMounted, onUnmounted, ref } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin' // 필요하다면
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
 import AboutView from '@/views/AboutView.vue'
 import InfoView from '@/views/InfoView.vue'
 import MusicViewVue from '@/views/MusicView.vue'
@@ -12,13 +12,14 @@ import InfoDjVue from '@/components/InfoDj.vue'
 import TeamVideoVue from '@/views/TeamVideo.vue'
 import { djData } from '@/data/djData'
 import type { SnsLink } from '@/data/djData'
+
 const currentDjInfo = ref({
   name: '',
   description: '',
   descript2: '',
   imageUrl: '',
   logoImg: '',
-  djsnsLink: [] as SnsLink[], // SnsLink[] 타입으로 명확히 지정
+  djsnsLink: [] as SnsLink[],
 })
 const showInfoDj = ref(false)
 
